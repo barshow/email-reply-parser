@@ -211,7 +211,7 @@ func detectSignature(lineIndex int, line *Line, lines []*Line) bool {
 		var lastMatchLineIndex int
 		linesTillQuotedText := getLinesTillQuotedText(lineIndex, lines)
 		for i, signatureLine := range linesTillQuotedText {
-			if isPossibleSignatureLine(signatureLine.ContentStripped) {
+			if signatureLine.PossibleSignatureLine {
 				lastMatchLineIndex = i
 				matches++
 			}
